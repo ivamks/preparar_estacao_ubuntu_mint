@@ -4,12 +4,6 @@
 # Author : Ivam Santos
 # Licence : GPLv3
 
-# Atualizando o Sistema Operacional
-sudo apt update
-sudo apt full-upgrade -y
-sudo apt autoremove
-sudo apt clean
-
 # Aplicativos básicos
 sudo apt install openssh-server evolution skypeforlinux vlc gimp obs-studio zoom-player whatsapp-desktop telegram-desktop -y 
 
@@ -62,4 +56,12 @@ sudo echo -e "\n[Desktop Entry] \nEncoding=UTF-8 \nName=Realm Studio \nComment=I
 sudo chmod 777 /usr/share/applications/realm-studio.desktop
 cp /usr/share/applications/realm-studio.desktop ~/Área\ de\ Trabalho/
 cp /usr/share/applications/realm-studio.desktop ~/Desktop
+
+# Atualizando o Sistema Operacional
+sudo apt update
+sudo apt full-upgrade -y
+sudo apt autoremove
+sudo apt -f install && sudo dpkg --configure -a
+sudo apt clean
+
 sudo reboot
