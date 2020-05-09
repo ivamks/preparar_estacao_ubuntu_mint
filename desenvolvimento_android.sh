@@ -1,4 +1,8 @@
 #!/bin/bash
+# Date : (09/mai/2020)
+# Distribution used to test : Ubuntu 17.10 x64
+# Author : Ivam Santos
+# Licence : GPLv3
 
 # Atualizando o Sistema Operacional
 sudo apt update
@@ -24,6 +28,7 @@ tar xfz android-studio-ide-192.6392135-linux.tar.gz
 rm android-studio-ide-192.6392135-linux.tar.gz
 
 echo -e "\n[Desktop Entry] \nEncoding=UTF-8 \nName=Android Studio \nComment=IDE Developement Android \nExec=/opt/android-studio/bin/studio.sh \nIcon=/opt/android-studio/bin/studio.png \nTerminal=false \nType=Application \nCategories=Application;Development; \nStartupNotify=true" > /usr/share/applications/android-studio.desktop
+sudo chmod 777 /usr/share/applications/android-studio.desktop
 
 # Removendo Firefox e Instalando o Brave e Chrome
 sudo apt remove firefox thunderbird --purge -y
@@ -40,6 +45,9 @@ tar -zxf playonlinux2019.tar.gz
 ./playonlinux/playonlinux   
 sudo ln -sf /opt/playonlinux/playonlinux /usr/bin/playonlinux
 echo -e ‘[Desktop Entry]\n Version=1.0\n Name=playonlinux\n Exec=/opt/playonlinux/playonlinux\n Icon=/opt/playonlinux/resources/images/configure/winecfg.png\n Type=Application\n Categories=Application’ | sudo tee /usr/share/applications/playonlinux.desktop
-sudo chmod +x /usr/share/applications/playonlinux.desktop
+sudo chmod 777 /usr/share/applications/playonlinux.desktop
+
 cp /usr/share/applications/playonlinux.desktop ~/Área\ de\ Trabalho/
 cp /usr/share/applications/playonlinux.desktop ~/Desktop
+
+sudo reboot
