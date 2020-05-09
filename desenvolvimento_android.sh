@@ -29,6 +29,8 @@ rm android-studio-ide-192.6392135-linux.tar.gz
 
 sudo echo -e "\n[Desktop Entry] \nEncoding=UTF-8 \nName=Android Studio \nComment=IDE Developement Android \nExec=/opt/android-studio/bin/studio.sh \nIcon=/opt/android-studio/bin/studio.png \nTerminal=false \nType=Application \nCategories=Application;Development; \nStartupNotify=true" > /usr/share/applications/android-studio.desktop
 sudo chmod 777 /usr/share/applications/android-studio.desktop
+cp /usr/share/applications/android-studio.desktop ~/Área\ de\ Trabalho/
+cp /usr/share/applications/android-studio.desktop ~/Desktop
 
 # Removendo Firefox e Instalando o Brave e Chrome
 sudo apt remove firefox thunderbird --purge -y
@@ -58,5 +60,6 @@ sudo mv /opt/linux-appimage /opt/realm-studio/realm-studio.sh
 
 sudo echo -e "\n[Desktop Entry] \nEncoding=UTF-8 \nName=Realm Studio \nComment=IDE Developement Realm Database \nExec=/opt/realm-studio/realm-studio.sh \nTerminal=false \nType=Application \nCategories=Application;Development; \nStartupNotify=true" > /usr/share/applications/realm-studio.desktop
 sudo chmod 777 /usr/share/applications/realm-studio.desktop
-
+cp /usr/share/applications/realm-studio.desktop ~/Área\ de\ Trabalho/
+cp /usr/share/applications/realm-studio.desktop ~/Desktop
 sudo reboot
