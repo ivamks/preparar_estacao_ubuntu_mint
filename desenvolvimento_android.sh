@@ -5,6 +5,7 @@
 # Licence : GPLv3
 
 # Aplicativos básicos
+sudo apt install ubuntu-restricted-extras -y
 sudo apt install openssh-server evolution skypeforlinux vlc gimp obs-studio zoom-player whatsapp-desktop telegram-desktop -y 
 
 #Instalando Java SDK
