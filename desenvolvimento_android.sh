@@ -27,7 +27,7 @@ wget https://redirector.gvt1.com/edgedl/android/studio/ide-zips/3.6.3.0/android-
 tar xfz android-studio-ide-192.6392135-linux.tar.gz
 rm android-studio-ide-192.6392135-linux.tar.gz
 
-echo -e "\n[Desktop Entry] \nEncoding=UTF-8 \nName=Android Studio \nComment=IDE Developement Android \nExec=/opt/android-studio/bin/studio.sh \nIcon=/opt/android-studio/bin/studio.png \nTerminal=false \nType=Application \nCategories=Application;Development; \nStartupNotify=true" > /usr/share/applications/android-studio.desktop
+sudo echo -e "\n[Desktop Entry] \nEncoding=UTF-8 \nName=Android Studio \nComment=IDE Developement Android \nExec=/opt/android-studio/bin/studio.sh \nIcon=/opt/android-studio/bin/studio.png \nTerminal=false \nType=Application \nCategories=Application;Development; \nStartupNotify=true" > /usr/share/applications/android-studio.desktop
 sudo chmod 777 /usr/share/applications/android-studio.desktop
 
 # Removendo Firefox e Instalando o Brave e Chrome
@@ -46,8 +46,17 @@ tar -zxf playonlinux2019.tar.gz
 sudo ln -sf /opt/playonlinux/playonlinux /usr/bin/playonlinux
 echo -e ‘[Desktop Entry]\n Version=1.0\n Name=playonlinux\n Exec=/opt/playonlinux/playonlinux\n Icon=/opt/playonlinux/resources/images/configure/winecfg.png\n Type=Application\n Categories=Application’ | sudo tee /usr/share/applications/playonlinux.desktop
 sudo chmod 777 /usr/share/applications/playonlinux.desktop
-
 cp /usr/share/applications/playonlinux.desktop ~/Área\ de\ Trabalho/
 cp /usr/share/applications/playonlinux.desktop ~/Desktop
+rm /opt/playonlinux2019.tar.gz
+
+#Realm Studio
+wget https://studio-releases.realm.io/latest/download/linux-appimage
+sudo chmod 777 /opt/linux-appimage
+sudo mkdir /opt/realm-studio  
+sudo mv /opt/linux-appimage /opt/realm-studio/realm-studio.sh
+
+sudo echo -e "\n[Desktop Entry] \nEncoding=UTF-8 \nName=Realm Studio \nComment=IDE Developement Realm Database \nExec=/opt/realm-studio/realm-studio.sh \nTerminal=false \nType=Application \nCategories=Application;Development; \nStartupNotify=true" > /usr/share/applications/realm-studio.desktop
+sudo chmod 777 /usr/share/applications/realm-studio.desktop
 
 sudo reboot
