@@ -22,7 +22,6 @@ tar xfz android-studio-ide-192.6392135-linux.tar.gz
 rm android-studio-ide-192.6392135-linux.tar.gz
 
 sudo echo -e "\n[Desktop Entry] \nEncoding=UTF-8 \nName=Android Studio \nComment=IDE Developement Android \nExec=/opt/android-studio/bin/studio.sh \nIcon=/opt/android-studio/bin/studio.png \nTerminal=false \nType=Application \nCategories=Application;Development; \nStartupNotify=true" > /usr/share/applications/android-studio.desktop
-sudo chmod 777 /usr/share/applications/android-studio.desktop
 cp /usr/share/applications/android-studio.desktop ~/Área\ de\ Trabalho/
 cp /usr/share/applications/android-studio.desktop ~/Desktop
 
@@ -41,7 +40,6 @@ tar -zxf playonlinux2019.tar.gz
 ./playonlinux/playonlinux   
 sudo ln -sf /opt/playonlinux/playonlinux /usr/bin/playonlinux
 echo -e ‘[Desktop Entry]\n Version=1.0\n Name=playonlinux\n Exec=/opt/playonlinux/playonlinux\n Icon=/opt/playonlinux/resources/images/configure/winecfg.png\n Type=Application\n Categories=Application’ | sudo tee /usr/share/applications/playonlinux.desktop
-sudo chmod 777 /usr/share/applications/playonlinux.desktop
 cp /usr/share/applications/playonlinux.desktop ~/Área\ de\ Trabalho/
 cp /usr/share/applications/playonlinux.desktop ~/Desktop
 rm /opt/playonlinux2019.tar.gz
@@ -53,11 +51,12 @@ sudo mkdir /opt/realm-studio
 sudo mv /opt/linux-appimage /opt/realm-studio/realm-studio.sh
 
 sudo echo -e "\n[Desktop Entry] \nEncoding=UTF-8 \nName=Realm Studio \nComment=IDE Developement Realm Database \nExec=/opt/realm-studio/realm-studio.sh \nTerminal=false \nType=Application \nCategories=Application;Development; \nStartupNotify=true" > /usr/share/applications/realm-studio.desktop
-sudo chmod 777 /usr/share/applications/realm-studio.desktop
 cp /usr/share/applications/realm-studio.desktop ~/Área\ de\ Trabalho/
 cp /usr/share/applications/realm-studio.desktop ~/Desktop
 
 # Atualizando o Sistema Operacional
+chown -R 1000:1000 ~/Área\ de\ Trabalho/*
+chown -R 1000:1000 ~/Desktop*
 sudo apt update
 sudo apt full-upgrade -y
 sudo apt autoremove
