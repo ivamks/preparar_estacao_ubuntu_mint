@@ -1,4 +1,4 @@
-//!/usr/bin/env bash
+#!/usr/bin/env bash
 # Date : (09/mai/2020)
 # Distribution used to test : Ubuntu 17.10 x64
 # Author : Ivam Santos
