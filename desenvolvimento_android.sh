@@ -4,6 +4,9 @@
 # Author : Ivam Santos
 # Licence : GPLv3
 
+#Atualização de Listas
+sudo apt list --upgradeable
+
 # Aplicativos básicos
 sudo apt install ubuntu-restricted-extras -y
 sudo apt install openssh-server evolution skypeforlinux vlc gimp obs-studio zoom-player whatsapp-desktop telegram-desktop -y 
@@ -34,17 +37,6 @@ echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable ma
 sudo apt update
 sudo apt install brave-browser -y
 
-#Instalar PlayOnLinux
-cd /opt
-wget wget https://www.playonlinux.com/script_files/PlayOnLinux/4.3.4/PlayOnLinux_4.3.4.tar.gz -O playonlinux2019.tar.gz
-tar -zxf playonlinux2019.tar.gz
-./playonlinux/playonlinux   
-sudo ln -sf /opt/playonlinux/playonlinux /usr/bin/playonlinux
-echo -e ‘[Desktop Entry]\n Version=1.0\n Name=playonlinux\n Exec=/opt/playonlinux/playonlinux\n Icon=/opt/playonlinux/resources/images/configure/winecfg.png\n Type=Application\n Categories=Application’ | sudo tee /usr/share/applications/playonlinux.desktop
-cp /usr/share/applications/playonlinux.desktop ~/Área\ de\ Trabalho/
-cp /usr/share/applications/playonlinux.desktop ~/Desktop
-rm /opt/playonlinux2019.tar.gz
-
 #Realm Studio
 wget https://studio-releases.realm.io/latest/download/linux-appimage
 sudo chmod 777 /opt/linux-appimage
@@ -54,6 +46,17 @@ sudo mv /opt/linux-appimage /opt/realm-studio/realm-studio.sh
 sudo echo -e "\n[Desktop Entry] \nEncoding=UTF-8 \nName=Realm Studio \nComment=IDE Developement Realm Database \nExec=/opt/realm-studio/realm-studio.sh \nTerminal=false \nType=Application \nCategories=Application;Development; \nStartupNotify=true" > /usr/share/applications/realm-studio.desktop
 cp /usr/share/applications/realm-studio.desktop ~/Área\ de\ Trabalho/
 cp /usr/share/applications/realm-studio.desktop ~/Desktop
+
+#Obs Studio
+sudo apt install obs-studio
+
+# Visual Studio Code
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+sudo apt-get install apt-transport-https
+sudo apt-get update
+sudo apt-get install code # or code-insiders
 
 # Atualizando o Sistema Operacional
 chown -R 1000:1000 ~/Área\ de\ Trabalho/*
